@@ -1,0 +1,34 @@
+spring:
+  #配置数据库
+  datasource:
+    druid:
+      url: jdbc:mysql://localhost:3306/yeb?useUnicode=true&characterEncoding=utf8
+      driver-class-name: com.mysql.jdbc.Driver
+      username: root
+      password: 123456
+
+#配置redis
+  redis:
+    host: 192.168.72.128
+    port: 6379
+    password: 123456
+    lettuce:
+      pool:
+        max-active: 8
+        max-idle: 8
+        max-wait: 100ms
+        min-idle: 0
+
+#配置mybatis-plus
+mybatis-plus:
+  type-aliases-package: com.example.yebserver.pojo
+  configuration:
+    map-underscore-to-camel-case: false
+
+
+#jwt:
+jwt:
+  tokenHeader: Authorization
+  secret: yeb-secret
+  expiration: 604800
+  tokenHead: Bearer
